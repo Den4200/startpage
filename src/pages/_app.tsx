@@ -2,16 +2,17 @@ import Head from "next/head";
 import { AppProps } from "next/app";
 import "../styles/index.css";
 
-function MyApp({ Component, pageProps }: AppProps) {
+const StartPage = ({ Component, pageProps }: AppProps) => {
   return (
     <>
       <Head>
-        <title>NextJS TailwindCSS TypeScript Starter</title>
+        <title>New Tab</title>
         <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+        <meta name="theme-color" content="#dddde6" />
       </Head>
       <Component {...pageProps} />
     </>
   );
-}
+};
 
-export default MyApp;
+export default StartPage;
