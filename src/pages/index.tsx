@@ -1,3 +1,5 @@
+import Searchbar from "@/components/Searchbar";
+
 const Home = () => {
   return (
     <div className="container mx-auto flex min-h-screen items-center justify-center p-4">
@@ -7,6 +9,8 @@ const Home = () => {
           <span className="text-indigo-700">TailwindCSS</span> and{" "}
           <span className="text-gray-500">TypeScript</span>.
         </h1>
+
+        <Searchbar />
       </main>
     </div>
   );
