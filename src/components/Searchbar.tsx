@@ -73,7 +73,8 @@ const Searchbar = () => {
                           active ? "bg-theme-darkalt" : "bg-theme-dark"
                         )}
                       >
-                        <DuplicateIcon className="w-4 h-4 inline-block" /> {query}
+                        <DuplicateIcon className="inline-block h-4 w-4" />{" "}
+                        {query}
                       </li>
                     )}
                   </Combobox.Option>
@@ -92,7 +93,7 @@ const Searchbar = () => {
                           active ? "bg-theme-darkalt" : "bg-theme-dark"
                         )}
                       >
-                        <SearchIcon className="w-4 h-4 inline-block" /> {result}
+                        <SearchIcon className="inline-block h-4 w-4" /> {result}
                       </li>
                     )}
                   </Combobox.Option>
