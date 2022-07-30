@@ -46,7 +46,7 @@ const Searchbar = () => {
           <Combobox.Input
             className="w-full rounded-lg border-2 border-theme-lightgray bg-theme-darkalt px-4 py-1 text-lg leading-loose shadow-lg outline-none"
             onChange={(event) => setQuery(event.target.value)}
-            placeholder="Search.."
+            placeholder="search.."
           />
 
           <SearchIcon
