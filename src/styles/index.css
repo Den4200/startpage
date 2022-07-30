@@ -8,3 +8,7 @@ body {
   background-color: theme("colors.theme.dark");
   font-family: "Source Code Pro", monospace;
 }
+
+input[type="search"] {
+  -webkit-appearance: none;
+}
