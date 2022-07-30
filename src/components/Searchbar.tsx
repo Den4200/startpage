@@ -1,4 +1,4 @@
-import { FormEvent, Fragment, useEffect, useState } from "react";
+import { FormEvent, useCallback, useEffect, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import axios from "axios";
 import { DuplicateIcon, SearchIcon } from "@heroicons/react/outline";
@@ -8,6 +8,12 @@ const Searchbar = () => {
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<string[]>([]);
   const [selectedResult, setSelectedResult] = useState("");
+
+  const searchInput = useCallback((element: HTMLInputElement) => {
+    if (element) {
+      element.focus();
+    }
+  }, []);
 
   useEffect(() => {
     const updateResults = async () => {
@@ -47,6 +53,8 @@ const Searchbar = () => {
             className="w-full rounded-lg border-2 border-theme-lightgray bg-theme-darkalt px-4 py-1 text-lg leading-loose shadow-lg outline-none"
             onChange={(event) => setQuery(event.target.value)}
             placeholder="search.."
+            type="search"
+            ref={searchInput}
           />
 
           <SearchIcon
@@ -66,7 +74,7 @@ const Searchbar = () => {
               <Combobox.Options className="absolute mt-2 w-full overflow-auto rounded-lg border-2 border-theme-lightgray py-1">
                 {results.length > 0 ? (
                   <Combobox.Option value={query}>
-                    {({ active, selected }) => (
+                    {({ active }) => (
                       <li
                         className={clsxm(
                           "px-3 leading-loose",
@@ -79,14 +87,14 @@ const Searchbar = () => {
                     )}
                   </Combobox.Option>
                 ) : (
-                  <div className="select-none p-2 text-center text-theme-lightgray bg-theme-dark">
+                  <div className="select-none bg-theme-dark p-2 text-center text-theme-lightgray">
                     No results found.
                   </div>
                 )}
 
                 {results.map((result) => (
                   <Combobox.Option key={result} value={result}>
-                    {({ active, selected }) => (
+                    {({ active }) => (
                       <li
                         className={clsxm(
                           "px-3 leading-loose",
