@@ -79,7 +79,7 @@ const Searchbar = () => {
                     )}
                   </Combobox.Option>
                 ) : (
-                  <div className="select-none p-2 text-center text-theme-lightgray">
+                  <div className="select-none p-2 text-center text-theme-lightgray bg-theme-dark">
                     No results found.
                   </div>
                 )}
