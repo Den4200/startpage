@@ -1,10 +1,13 @@
+import { useRouter } from "next/router";
 import { FormEvent, useCallback, useEffect, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
-import axios from "axios";
 import { DuplicateIcon, SearchIcon } from "@heroicons/react/outline";
+import axios from "axios";
 import clsxm from "@/utils/clsxm";
 
 const Searchbar = () => {
+  const router = useRouter();
+
   const [query, setQuery] = useState("");
   const [results, setResults] = useState<string[]>([]);
   const [selectedResult, setSelectedResult] = useState("");
@@ -35,11 +38,13 @@ const Searchbar = () => {
   }, [selectedResult]);
 
   const search = (q: string) => {
+    console.log(q);
+
     if (q.length > 0) {
       if (q.match(/http(?:s)?:\/\/.+/)) {
-        window.location.href = q;
+        router.push(q);
       } else {
-        window.location.href = `https://www.google.com/search?q=${q}`;
+        router.push(`https://www.google.com/search?q=${q}`);
       }
     }
   };
