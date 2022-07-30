@@ -1,7 +1,7 @@
 import { FormEvent, Fragment, useEffect, useState } from "react";
 import { Combobox, Transition } from "@headlessui/react";
 import axios from "axios";
-import { SearchIcon } from "@heroicons/react/outline";
+import { DuplicateIcon, SearchIcon } from "@heroicons/react/outline";
 import clsxm from "@/utils/clsxm";
 
 const Searchbar = () => {
@@ -69,11 +69,11 @@ const Searchbar = () => {
                     {({ active, selected }) => (
                       <li
                         className={clsxm(
-                          "px-2 leading-loose",
+                          "px-3 leading-loose",
                           active ? "bg-[#323232]" : "bg-theme-dark"
                         )}
                       >
-                        {query}
+                        <DuplicateIcon className="w-4 h-4 inline-block" /> {query}
                       </li>
                     )}
                   </Combobox.Option>
@@ -88,11 +88,11 @@ const Searchbar = () => {
                     {({ active, selected }) => (
                       <li
                         className={clsxm(
-                          "px-2 leading-loose",
+                          "px-3 leading-loose",
                           active ? "bg-[#323232]" : "bg-theme-dark"
                         )}
                       >
-                        {result}
+                        <SearchIcon className="w-4 h-4 inline-block" /> {result}
                       </li>
                     )}
                   </Combobox.Option>
