@@ -36,7 +36,11 @@ const Searchbar = () => {
 
   const search = (q: string) => {
     if (q.length > 0) {
-      window.location.href = `https://www.google.com/search?q=${q}`;
+      if (q.match(/http(?:s)?:\/\/.+/)) {
+        window.location.href = q;
+      } else {
+        window.location.href = `https://www.google.com/search?q=${q}`;
+      }
     }
   };
 
