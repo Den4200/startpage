@@ -9,6 +9,8 @@ module.exports = {
         theme: {
           white: "#dddde6",
           dark: "#292929",
+          darkalt: "#303030",
+          lightgray: "#666666"
         },
       },
     },

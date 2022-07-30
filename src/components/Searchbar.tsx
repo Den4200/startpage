@@ -44,7 +44,7 @@ const Searchbar = () => {
       <Combobox onChange={setSelectedResult} value={selectedResult}>
         <div className="relative text-theme-white">
           <Combobox.Input
-            className="w-full rounded-lg border-2 border-[#666666] bg-[#303030] px-4 py-1 text-lg leading-loose shadow-lg outline-none"
+            className="w-full rounded-lg border-2 border-theme-lightgray bg-theme-darkalt px-4 py-1 text-lg leading-loose shadow-lg outline-none"
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Search.."
           />
@@ -63,14 +63,14 @@ const Searchbar = () => {
             leaveTo="transform scale-95 opacity-0"
           >
             {query.length > 0 ? (
-              <Combobox.Options className="absolute mt-2 w-full overflow-auto rounded-lg border-2 border-[#666666] py-1">
+              <Combobox.Options className="absolute mt-2 w-full overflow-auto rounded-lg border-2 border-theme-lightgray py-1">
                 {results.length > 0 ? (
                   <Combobox.Option value={query}>
                     {({ active, selected }) => (
                       <li
                         className={clsxm(
                           "px-3 leading-loose",
-                          active ? "bg-[#323232]" : "bg-theme-dark"
+                          active ? "bg-theme-darkalt" : "bg-theme-dark"
                         )}
                       >
                         <DuplicateIcon className="w-4 h-4 inline-block" /> {query}
@@ -78,7 +78,7 @@ const Searchbar = () => {
                     )}
                   </Combobox.Option>
                 ) : (
-                  <div className="select-none p-2 text-center text-[#606060]">
+                  <div className="select-none p-2 text-center text-theme-lightgray">
                     No results found.
                   </div>
                 )}
@@ -89,7 +89,7 @@ const Searchbar = () => {
                       <li
                         className={clsxm(
                           "px-3 leading-loose",
-                          active ? "bg-[#323232]" : "bg-theme-dark"
+                          active ? "bg-theme-darkalt" : "bg-theme-dark"
                         )}
                       >
                         <SearchIcon className="w-4 h-4 inline-block" /> {result}
