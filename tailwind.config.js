@@ -5,6 +5,9 @@ module.exports = {
   ],
   theme: {
     extend: {
+      animation: {
+        blink: "blink 1250ms ease-in-out infinite",
+      },
       colors: {
         theme: {
           beige: "#eadbb2",
@@ -13,6 +16,12 @@ module.exports = {
           gold: "#e2b714",
           lightgray: "#666666",
           white: "#dddde6",
+        },
+      },
+      keyframes: {
+        blink: {
+          "0%, 100%": { opacity: 1 },
+          "50%": { opacity: 0 },
         },
       },
     },
