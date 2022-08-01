@@ -38,8 +38,6 @@ const Searchbar = () => {
   }, [selectedResult]);
 
   const search = (q: string) => {
-    console.log(q);
-
     if (q.length > 0) {
       if (q.match(/http(?:s)?:\/\/.+/)) {
         router.push(q);
