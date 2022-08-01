@@ -18,6 +18,24 @@ const Searchbar = () => {
     }
   }, []);
 
+  const search = useCallback(
+    (q: string) => {
+      if (q.length > 0) {
+        if (q.match(/http(?:s)?:\/\/.+/)) {
+          router.push(q);
+        } else {
+          router.push(`https://www.google.com/search?q=${q}`);
+        }
+      }
+    },
+    [router]
+  );
+
+  const onSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    search(query);
+  };
+
   useEffect(() => {
     const updateResults = async () => {
       const res = await axios.get("/api/search/", { params: { q: query } });
@@ -35,22 +53,7 @@ const Searchbar = () => {
     if (selectedResult.length > 0) {
       search(selectedResult);
     }
-  }, [selectedResult]);
-
-  const search = (q: string) => {
-    if (q.length > 0) {
-      if (q.match(/http(?:s)?:\/\/.+/)) {
-        router.push(q);
-      } else {
-        router.push(`https://www.google.com/search?q=${q}`);
-      }
-    }
-  };
-
-  const onSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    search(query);
-  };
+  }, [search, selectedResult]);
 
   return (
     <form onSubmit={onSubmit}>
