@@ -18,6 +18,24 @@ const Searchbar = () => {
     }
   }, []);
 
+  const search = useCallback(
+    (q: string) => {
+      if (q.length > 0) {
+        if (q.match(/http(?:s)?:\/\/.+/)) {
+          router.push(q);
+        } else {
+          router.push(`https://www.google.com/search?q=${q}`);
+        }
+      }
+    },
+    [router]
+  );
+
+  const onSubmit = (event: FormEvent) => {
+    event.preventDefault();
+    search(query);
+  };
+
   useEffect(() => {
     const updateResults = async () => {
       const res = await axios.get("/api/search/", { params: { q: query } });
@@ -35,24 +53,7 @@ const Searchbar = () => {
     if (selectedResult.length > 0) {
       search(selectedResult);
     }
-  }, [selectedResult]);
-
-  const search = (q: string) => {
-    console.log(q);
-
-    if (q.length > 0) {
-      if (q.match(/http(?:s)?:\/\/.+/)) {
-        router.push(q);
-      } else {
-        router.push(`https://www.google.com/search?q=${q}`);
-      }
-    }
-  };
-
-  const onSubmit = (event: FormEvent) => {
-    event.preventDefault();
-    search(query);
-  };
+  }, [search, selectedResult]);
 
   return (
     <form onSubmit={onSubmit}>
@@ -81,25 +82,24 @@ const Searchbar = () => {
           >
             {query.length > 0 ? (
               <Combobox.Options className="absolute mt-2 w-full overflow-auto rounded-lg border-2 border-theme-lightgray py-1">
-                {results.length > 0 ? (
-                  <Combobox.Option value={query}>
-                    {({ active }) => (
-                      <li
-                        className={clsxm(
-                          "px-3 leading-loose",
-                          active ? "bg-theme-darkalt" : "bg-theme-dark"
-                        )}
-                      >
-                        <DuplicateIcon className="inline-block h-4 w-4" />{" "}
-                        {query}
-                      </li>
-                    )}
-                  </Combobox.Option>
-                ) : (
+                <Combobox.Option value={query}>
+                  {({ active }) => (
+                    <li
+                      className={clsxm(
+                        "px-3 leading-loose",
+                        active ? "bg-theme-darkalt" : "bg-theme-dark"
+                      )}
+                    >
+                      <DuplicateIcon className="inline-block h-4 w-4" /> {query}
+                    </li>
+                  )}
+                </Combobox.Option>
+
+                {results.length === 0 ? (
                   <div className="select-none bg-theme-dark p-2 text-center text-theme-lightgray">
                     No results found.
                   </div>
-                )}
+                ) : null}
 
                 {results.map((result) => (
                   <Combobox.Option key={result} value={result}>
