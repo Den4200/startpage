@@ -21,7 +21,11 @@ const Searchbar = () => {
   const search = useCallback(
     (q: string) => {
       if (q.length > 0) {
-        if (q.match(/http(?:s)?:\/\/.+/)) {
+        if (q.match(/((?:https?:)?\/\/)?[A-Za-z0-9\-](?:\.[A-Za-z0-9\-]|\:\d+)/)) {
+          if (!q.match(/(?:https?:)?\/\/.+/)) {
+            q = "//" + q;
+          }
+
           router.push(q);
         } else {
           router.push(`https://www.google.com/search?q=${q}`);
