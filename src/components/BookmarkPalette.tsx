@@ -85,7 +85,7 @@ const BookmarkPalette = ({ bookmarks }: BookmarkPaletteProps) => {
   return (
     <Transition
       show={open}
-      className="absolute top-0 left-0 flex h-screen w-screen items-center justify-center bg-black/50"
+      className="absolute top-0 left-0 flex h-screen w-screen flex-col items-center justify-around bg-black/50"
       enter="transition duration-300 ease-out"
       enterFrom="opacity-0"
       enterTo="opacity-100"
@@ -116,7 +116,7 @@ const BookmarkPalette = ({ bookmarks }: BookmarkPaletteProps) => {
               leaveTo="transform scale-95 opacity-0"
             >
               {input.length > 0 ? (
-                <Combobox.Options className="absolute mt-2 w-full overflow-auto rounded-lg border-2 border-theme-lightgray py-1">
+                <Combobox.Options className="absolute mt-2 max-h-96 w-full overflow-y-auto rounded-lg border-2 border-theme-lightgray py-1">
                   {results.length === 0 ? (
                     <div className="select-none bg-theme-dark p-2 text-center text-theme-lightgray">
                       No bookmarks found.
@@ -130,7 +130,10 @@ const BookmarkPalette = ({ bookmarks }: BookmarkPaletteProps) => {
                         {result.name}
                       </li>
                       {result.links.map((link) => (
-                        <Combobox.Option key={`${result.name}-${link.name}`} value={link}>
+                        <Combobox.Option
+                          key={`${result.name}-${link.name}`}
+                          value={link}
+                        >
                           {({ active }) => (
                             <li
                               className={clsxm(
@@ -154,6 +157,7 @@ const BookmarkPalette = ({ bookmarks }: BookmarkPaletteProps) => {
           </div>
         </Combobox>
       </form>
+      <div />
     </Transition>
   );
 };
