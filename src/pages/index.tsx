@@ -136,6 +136,80 @@ const BOOKMARKS = [
       },
     ],
   },
+  {
+    name: "github repositories",
+    hidden: true,
+    links: [
+      {
+        name: "Den4200/aniplix",
+        url: "https://github.com/Den4200/aniplix",
+      },
+      {
+        name: "Den4200/audreyasked",
+        url: "https://github.com/Den4200/audreyasked",
+      },
+      {
+        name: "Den4200/dennispham.me",
+        url: "https://github.com/Den4200/dennispham.me",
+      },
+      {
+        name: "Den4200/tinyy.io",
+        url: "https://github.com/Den4200/tinyy.io",
+      },
+      {
+        name: "Den4200/startpage",
+        url: "https://github.com/Den4200/startpage",
+      },
+      {
+        name: "Den4200/chip-8",
+        url: "https://github.com/Den4200/chip-8",
+      },
+      {
+        name: "Den4200/pathfinding-visualizer",
+        url: "https://github.com/Den4200/pathfinding-visualizer",
+      },
+      {
+        name: "Den4200/kubernetes",
+        url: "https://github.com/Den4200/kubernetes",
+      },
+      {
+        name: "Den4200/dotfiles",
+        url: "https://github.com/Den4200/dotfiles",
+      },
+      {
+        name: "Den4200/advent-of-code",
+        url: "https://github.com/Den4200/advent-of-code",
+      },
+      {
+        name: "python-discord/bot",
+        url: "https://github.com/python-discord/bot",
+      },
+      {
+        name: "python-discord/site",
+        url: "https://github.com/python-discord/site",
+      },
+      {
+        name: "python-discord/sir-lancebot",
+        url: "https://github.com/python-discord/sir-lancebot",
+      },
+      {
+        name: "python-discord/kubernetes",
+        url: "https://github.com/python-discord/kubernetes",
+      },
+      {
+        name: "python-discord/snekbox",
+        url: "https://github.com/python-discord/snekbox",
+      },
+      {
+        name: "python-discord/metricity",
+        url: "https://github.com/python-discord/metricity",
+      },
+      {
+        name: "python-discord/admin-tasks",
+        url: "https://github.com/python-discord/admin-tasks",
+      },
+    ],
+  },
 ];
 
 export default Home;
