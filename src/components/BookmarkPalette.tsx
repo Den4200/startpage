@@ -54,11 +54,17 @@ const BookmarkPalette = ({ bookmarks }: BookmarkPaletteProps) => {
         .map((bookmark) =>
           bookmark.name.split(/[\/ ]+/).some((parts) => parts.startsWith(input))
             ? bookmark
-            : bookmark.links.some((link) => link.name.split(/[\/ ]+/).some((parts) => parts.startsWith(input)))
+            : bookmark.links.some((link) =>
+                link.name
+                  .split(/[\/ ]+/)
+                  .some((parts) => parts.startsWith(input))
+              )
             ? {
                 name: bookmark.name,
                 links: bookmark.links.filter((link) =>
-                  link.name.split(/[\/ ]+/).some((parts) => parts.startsWith(input))
+                  link.name
+                    .split(/[\/ ]+/)
+                    .some((parts) => parts.startsWith(input))
                 ),
               }
             : null
@@ -115,7 +121,7 @@ const BookmarkPalette = ({ bookmarks }: BookmarkPaletteProps) => {
               leaveTo="transform scale-95 opacity-0"
             >
               {input.length > 0 ? (
-                <Combobox.Options className="absolute mt-2 max-h-96 w-full overflow-y-auto rounded-lg border-2 border-theme-lightgray py-1">
+                <Combobox.Options className="absolute mt-2 max-h-96 w-full overflow-y-auto rounded-lg border-2 border-theme-lightgray bg-theme-dark py-1">
                   {results.length === 0 ? (
                     <div className="select-none bg-theme-dark p-2 text-center text-theme-lightgray">
                       No bookmarks found.
