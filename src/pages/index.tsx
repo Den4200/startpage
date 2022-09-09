@@ -36,6 +36,7 @@ const Home = () => {
 const BOOKMARKS = [
   {
     name: "daily",
+    hidden: false,
     links: [
       {
         name: "gmail",
@@ -53,6 +54,7 @@ const BOOKMARKS = [
   },
   {
     name: "school",
+    hidden: false,
     links: [
       {
         name: "mypurdue",
@@ -66,6 +68,7 @@ const BOOKMARKS = [
   },
   {
     name: "dev",
+    hidden: false,
     links: [
       {
         name: "github",
@@ -91,6 +94,7 @@ const BOOKMARKS = [
   },
   {
     name: "docs",
+    hidden: false,
     links: [
       {
         name: "tailwind",
@@ -116,6 +120,7 @@ const BOOKMARKS = [
   },
   {
     name: "fun",
+    hidden: false,
     links: [
       {
         name: "aniplix",
