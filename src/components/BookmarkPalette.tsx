@@ -52,14 +52,13 @@ const BookmarkPalette = ({ bookmarks }: BookmarkPaletteProps) => {
     setResults(
       bookmarks
         .map((bookmark) =>
-          bookmark.name.startsWith(input)
+          bookmark.name.split(/[\/ ]+/).some((parts) => parts.startsWith(input))
             ? bookmark
-            : bookmark.links.filter((link) => link.name.startsWith(input))
-                .length > 0
+            : bookmark.links.some((link) => link.name.split(/[\/ ]+/).some((parts) => parts.startsWith(input)))
             ? {
                 name: bookmark.name,
                 links: bookmark.links.filter((link) =>
-                  link.name.startsWith(input)
+                  link.name.split(/[\/ ]+/).some((parts) => parts.startsWith(input))
                 ),
               }
             : null
