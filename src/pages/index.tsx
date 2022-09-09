@@ -79,6 +79,39 @@ const BOOKMARKS = [
         name: "tcpshield",
         url: "https://panel.tcpshield.com/",
       },
+      {
+        name: "webshare",
+        url: "https://proxy.webshare.io/dashboard/",
+      },
+      {
+        name: "discord",
+        url: "https://discord.com/developers/",
+      },
+    ],
+  },
+  {
+    name: "docs",
+    links: [
+      {
+        name: "tailwind",
+        url: "https://tailwindcss.com/",
+      },
+      {
+        name: "heroicons",
+        url: "https://heroicons.com/",
+      },
+      {
+        name: "headlessui",
+        url: "https://headlessui.com/",
+      },
+      {
+        name: "kubernetes",
+        url: "https://kubernetes.io/docs/home/",
+      },
+      {
+        name: "mdn",
+        url: "https://developer.mozilla.org/",
+      },
     ],
   },
   {
@@ -89,12 +122,12 @@ const BOOKMARKS = [
         url: "https://aniplix.xyz/",
       },
       {
-        name: "youtube",
-        url: "https://youtube.com/",
-      },
-      {
         name: "netflix",
         url: "https://www.netflix.com/",
+      },
+      {
+        name: "youtube",
+        url: "https://youtube.com/",
       },
     ],
   },
