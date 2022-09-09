@@ -66,13 +66,13 @@ const BookmarkPalette = ({ bookmarks }: BookmarkPaletteProps) => {
         )
         .filter((bookmark) => bookmark !== null) as Bookmark[]
     );
-  }, [input]);
+  }, [bookmarks, input]);
 
   useEffect(() => {
     if (selectedBookmark !== undefined) {
       router.push(selectedBookmark.url);
     }
-  }, [selectedBookmark]);
+  }, [router, selectedBookmark]);
 
   const onSubmit = (event: FormEvent) => {
     event.preventDefault();
@@ -124,13 +124,13 @@ const BookmarkPalette = ({ bookmarks }: BookmarkPaletteProps) => {
                   ) : null}
 
                   {results.map((result) => (
-                    <div>
+                    <div key={result.name}>
                       <li className="bg-theme-dark px-3 leading-loose">
                         <CollectionIcon className="inline-block h-4 w-4" />{" "}
                         {result.name}
                       </li>
                       {result.links.map((link) => (
-                        <Combobox.Option value={link}>
+                        <Combobox.Option key={`${result.name}-${link.name}`} value={link}>
                           {({ active }) => (
                             <li
                               className={clsxm(
