@@ -26,7 +26,7 @@ const Searchbar = () => {
             q = "//" + q;
           }
 
-          router.push(q);
+          window.location.href = q;
         } else {
           router.push(`https://www.google.com/search?q=${q}`);
         }
