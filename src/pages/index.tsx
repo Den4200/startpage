@@ -210,6 +210,20 @@ const BOOKMARKS = [
       },
     ],
   },
+  {
+    name: "local dev",
+    hidden: true,
+    links: [
+      {
+        name: "localhost:3000",
+        url: "http://localhost:3000",
+      },
+      {
+        name: "localhost:8000",
+        url: "http://localhost:8000",
+      },
+    ],
+  },
 ];
 
 export default Home;
