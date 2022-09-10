@@ -224,6 +224,44 @@ const BOOKMARKS = [
       },
     ],
   },
+  {
+    name: "shopping",
+    hidden: true,
+    links: [
+      {
+        name: "amazon",
+        url: "https://www.amazon.com/",
+      },
+      {
+        name: "ebay",
+        url: "https://www.ebay.com/",
+      },
+      {
+        name: "smoko",
+        url: "https://www.smokonow.com/",
+      },
+      {
+        name: "bestbuy",
+        url: "https://www.bestbuy.com/",
+      },
+      {
+        name: "microcenter",
+        url: "https://www.microcenter.com/",
+      },
+      {
+        name: "newegg",
+        url: "https://www.newegg.com/",
+      },
+      {
+        name: "aliexpress",
+        url: "https://www.aliexpress.com/",
+      },
+      {
+        name: "etsy",
+        url: "https://www.etsy.com/",
+      },
+    ],
+  },
 ];
 
 export default Home;
