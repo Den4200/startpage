@@ -230,7 +230,7 @@ const BOOKMARKS = [
     links: [
       {
         name: "amazon",
-        url: "https://www.amazon.com/",
+        url: "https://smile.amazon.com/",
       },
       {
         name: "ebay",
