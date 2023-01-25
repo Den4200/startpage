@@ -64,6 +64,10 @@ const BOOKMARKS = [
         name: "brightspace",
         url: "https://purdue.brightspace.com/",
       },
+      {
+        name: "gradescope",
+        url: "https://www.gradescope.com/",
+      },
     ],
   },
   {
