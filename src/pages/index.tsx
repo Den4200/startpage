@@ -68,6 +68,10 @@ const BOOKMARKS = [
         name: "gradescope",
         url: "https://www.gradescope.com/",
       },
+      {
+        name: "overleaf",
+        url: "https://www.overleaf.com/",
+      },
     ],
   },
   {
